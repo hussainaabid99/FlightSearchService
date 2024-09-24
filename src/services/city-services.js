@@ -12,6 +12,30 @@ async function createCity(data) {
      }
 }
 
+async function fetchAllCity() {
+     try {
+          const city = await cityRepository.getAll()
+          return city;
+     } catch (error) {
+          console.log("Something went wrong in service layer");
+          throw error;
+     }
+}
+
+async function fetchCity(data) {
+     try {
+          const city = await cityRepository.get(data)
+          return city;
+     } catch (error) {
+          console.log("Something went wrong in service layer");
+          throw error;
+     }
+
+}
+
+
 module.exports = {
-     createCity
+     createCity,
+     fetchCity,
+     fetchAllCity
 }

@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     airport_code: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       unique: true
     },
